@@ -1,3 +1,3 @@
-class SiteController < SiteController
-  layout'Site'
+class SiteController < ApplicationController
+  layout'site'
 end
