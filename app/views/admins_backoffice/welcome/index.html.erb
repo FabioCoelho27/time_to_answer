@@ -48,7 +48,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-user">            
                         <li>
-                          <%= link_to destroy_admins_session_path, method: :delete do %>
+                          <%= link_to destroy_admin_session_path, method: :delete do %>
                               <i class="fa fa-sign-out fa-fw"></i> Sair
                           
                           <% end %>
@@ -69,7 +69,7 @@
                               <i class="fa fa-dashboard fa-fw"></i> Dashboard
                             <% end %>
                         </li>
-                        <%= link_to edit_admins_backoffice_admin_path(admin.id), class="btn btn-primary btn-circle" do %>
+                        <%= link_to edit_admin_backoffice_admin_path(admin.id), class:"btn btn-primary btn-circle" do %>
                               <i class="fa fa-users fa-fw"></i> Administradores
                             <% end %>
                                                    
