@@ -20,9 +20,11 @@
   <%= form_with(model: [ :admins_backoffice, @subject ], local: true) do |form| %>
 
     <div class="form-group">
-        <%= form.label :subject %>
-        <%= form.text_field :description, class:"form-control",  placeholder:"Descrição do Assunto/Área" %>
-        
+        <%= form.label :description %>
+        <%= form.text_field :description, class:"form-control", placeholder:"Descrição do Assunto/Área"  %>
+        <%= form.text_field :description, 
+                class:"form-control", 
+                placeholder: t('placeholder.subject_description')  %>
     </div>
      
        <div class="row">
@@ -32,6 +34,10 @@
       <!-- /.col-lg-12 -->
     <div>
     </div> 
-      <button type="submit" class="btn btn-default">Salvar</button>
+     <button type="submit" class="btn btn-default",
+             buttons: t('save')
+        <%= t('button.save') %>
+
+      </button>
   <% end %>
 </div>
