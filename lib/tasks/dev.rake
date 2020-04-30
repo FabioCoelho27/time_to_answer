@@ -79,7 +79,7 @@ end
 private
 
   def create_question_params(subject = Subject.all.sample)
-    {question: {
+    { question: {
         description: "#{Faker::Lorem.paragraph} #{Faker::Lorem.question}",
         subject: subject,
         answers_attributes:[]

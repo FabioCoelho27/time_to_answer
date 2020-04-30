@@ -13,32 +13,17 @@
           <div>
             <%= f.password_field :password, placeholder:"Senha", class:"form-control" %>
           </div>
-          
+
           <div>
-            <%= f.submit "Entrar", class:"btn btn-default submit", style:"float: none; margin-left: 0px;" %>
+            <%= f.submit "Entrar", class:"btn btn-default submit", style:"float: none; margin-left: 0px; width: 40%;" %>
+            <%= link_to 'Esqueceu a sua senha?', new_user_password_path, class:"reset_pass" %>
           </div>
 
           <div class="clearfix"></div>
 
-          <div class="separator">
-            
-            <div class="clearfix"></div>
-            <br />
-
-            <div>
-              <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
-              <p>©2016 All Rights Reserved.   . Privacy and Terms</p>
-            </div>
-          </div>
+          <div class="separator"></div>
         <% end %>
       </section>
     </div>
   </div>
 </div>
-
-
-
-
-
-
-

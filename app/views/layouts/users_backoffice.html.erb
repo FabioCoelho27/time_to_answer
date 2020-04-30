@@ -50,11 +50,7 @@
                       <i class="fa fa-home"></i>Início
                     <% end %>
                   </li>
-                  <li>
-                    
-                     
-                    <% end %>
-                  </li>
+                 
                 </ul>
               </div>
 
@@ -204,34 +200,34 @@
     <div class="modal fade" id="avatarModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
-        <%= form_with(url: users_backoffice_profile_path, model: current_user, class:"form-horizontal form-label-left") do |form| %>
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Avatar</h4>
-          </div>
-          <div class="modal-body">
-            <%= form.fields_for :user_profile do |profile_form|  %>
-              <div class="form-group">
-                <%= profile_form.label :avatar %>
-                <%= image_tag(avatar_url, alt:"...", class:"img-circle profile_img", id:"imgAvatarLg") %>
-                <%= profile_form.file_field :avatar %>
-              </div>
-            <% end %>
-          </div>
-          <div class="modal-footer">
-            <%= form.submit "Salvar", class:"btn btn-primary" %>
-          </div>
-        <% end %>
+          <%= form_with(url: users_backoffice_profile_path, model: current_user, class:"form-horizontal form-label-left") do |form| %>
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Avatar</h4>
+            </div>
+            <div class="modal-body">
+              <%= form.fields_for :user_profile do |profile_form|  %>
+                <div class="form-group">
+                  <%= profile_form.label :avatar %>
+                  <%= image_tag(avatar_url, alt:"...", class:"img-circle profile_img", id:"imgAvatarLg") %>
+                  <%= profile_form.file_field :avatar %>
+                </div>
+              <% end %>
+            </div>
+            <div class="modal-footer">
+              <%= form.submit "Salvar", class:"btn btn-primary" %>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
     <!-- /Modal -->
 
 
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_include_tag 'users_backoffice' %>
+      <%= javascript_include_tag 'application' %>
+      <%= javascript_include_tag 'users_backoffice' %>
 
-    <% if notice %>
+      <% if notice %>
         <%= javascript_tag do %>
             $.bootstrapGrowl('<%= notice %>', {
             type: 'success', // (null, 'info', 'danger', 'success')
@@ -240,12 +236,12 @@
             stackup_spacing: 10 // spacing between consecutively stacked growls.
             });
         <% end %>
-    <% end %>
+      <% end %>
 
-    <%= javascript_tag do %>
-       $(function() {
-         $('.datepicker').datepicker();
-       });
-    <% end  %>
+      <%= javascript_tag do %>
+        $(function() {
+          $('.datepicker').datepicker();
+        });
+      <% end  %>
   </body>
-</html>
+</html>    

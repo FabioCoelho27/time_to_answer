@@ -16,9 +16,11 @@ Rails.application.config.assets.precompile += %w( admins_backoffice.js admins_ba
 Rails.application.config.assets.precompile += %w( users_backoffice.js users_backoffice.css )
 Rails.application.config.assets.precompile += %w( admin_devise.js admin_devise.css )
 Rails.application.config.assets.precompile += %w( user_devise.js user_devise.css )
+Rails.application.config.assets.precompile += %w( site.js site.css )
 
 # /lib/assets
 Rails.application.config.assets.precompile += %w( sb-admin-2.js sb-admin.css )
-Rails.application.config.assets.precompile += %w( custom.js custom.css img.jpg )
+Rails.application.config.assets.precompile += %w( custom.js custom.css img.jpg _img.jpg )
+Rails.application.config.assets.precompile += %w( surface-fix.js navbar.css surface-fix.css )
 #vendor/assets
 Rails.application.config.assets.precompile += %w( jquery-2.2.3/dist/jquery.js )
