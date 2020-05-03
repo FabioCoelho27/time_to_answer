@@ -61,28 +61,38 @@ task add_subjects: :environment do
   end
 end
 
-desc "Adiciona perguntas e respostas"
-task add_answers_and_questions: :environment do
-  Subject.all.each do |subject|
-    rand(5..10).times do |i|
-      params = create_question_params(subject)
-      answers_array = params[:question][:answers_attributes]
+  desc "Adiciona perguntas e respostas"
+  task add_answers_and_questions: :environment do
+    Subject.all.each do |subject|
+      rand(5..10).times do |i|
+        params = create_question_params(subject)
+        answers_array = params[:question][:answers_attributes]
 
-      add_answers(answers_array)
-      select_true_answer(answers_array)
-               
-      Question.create!(params[:question])
+        add_answers(answers_array)
+        select_true_answer(answers_array)
+                
+        Question.create!(params[:question])
+      end
     end
   end
-end
+
+  desc "Reseta o contador dos assuntos"
+  task reset_subject_counter: :environment do
+    show_spinner("Resetando contador dos assuntos...") do
+      Subject.all.each do |subject|
+        Subject.reset_counters(subject.id, :questions)
+      end
+    end
+  end
+
 
 private
 
   def create_question_params(subject = Subject.all.sample)
     { question: {
-        description: "#{Faker::Lorem.paragraph} #{Faker::Lorem.question}",
-        subject: subject,
-        answers_attributes:[]
+          description: "#{Faker::Lorem.paragraph} #{Faker::Lorem.question}",
+          subject: subject,
+          answers_attributes:[]
 
       }
     }
