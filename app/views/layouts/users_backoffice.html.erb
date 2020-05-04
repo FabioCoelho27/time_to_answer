@@ -33,14 +33,11 @@
                 <%= image_tag 'img.jpg', alt:"...", class:"img-circle profile_img" %>
               </div>
               <div class="profile_info">
-                <span>Welcome,</span>
-                <h2>John Doe</h2>
+                <span>Seja Bem Vindo,</span>
+                <h2><%= current_user.full_name%></h2>
               </div>
             </div>
-            <!-- /menu profile quick info -->
-
-            <br />
-
+            
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
@@ -215,6 +212,11 @@
             stackup_spacing: 10 // spacing between consecutively stacked growls.
             });
         <% end %>
+    <% end %>
+    <%= javascript_tag do %>
+      $(function() {
+        $('.datepicker').datepicker();  
+      });
     <% end %>
   </body>
 </html>
